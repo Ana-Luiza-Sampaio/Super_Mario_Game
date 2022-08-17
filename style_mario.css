@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.game{
+    width: 100%;
+    height: 100vh;
+    border-bottom: 100px solid rgb(24, 174, 24);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+#score{
+    position: absolute;
+    top: 30px;
+    left: 75px;
+    z-index: 100;
+    font-size: 45px;
+    font-family: 'silkscreen';
+    font-weight: bold;
+    color: rgb(24, 174, 24);
+}
+.clouds-gamer{
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+}
+.super-mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+.jump-mario{
+    animation: mario-animation 500ms ease-out;
+}
+.pipe-game{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+@keyframes clouds-animation{
+    from{
+        right: -550px;
+    }
+    to{
+        right: 100%;
+    }
+}
+@keyframes pipe-animation{
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+@keyframes mario-animation{
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 180px;
+    }
+    50%{
+       bottom: 180px; 
+    }
+    60%{
+        bottom: 180px;
+    }
+    70%{
+        bottom: 180px;
+    }
+    100%{
+        bottom: 0%;
+    }
+}
