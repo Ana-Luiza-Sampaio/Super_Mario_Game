@@ -8,8 +8,22 @@
         <title>Super Mario - StartSe</title>
     </head>
     <body>
-        <div class="game">
-            <div id= "score"></div> 
+           
+        <div class="game"> 
+
+            <div id="start_game" class="start_game">
+                <h1>Super Mario and the pipes</h1>
+                <p>Use the spacebar to help Mario jump over the pipes.</p>
+                <input type="button" value="Start Game" id="start_button">
+           </div>
+
+            <div id="game_over" class="game_over">
+                 <h1>Game Over</h1>
+                   <p>Use the spacebar to help Mario jump over the pipes.</p>
+                 <input type="button" value="Try again!" id="reset_button">
+            </div>
+
+            <div id="score">Score:</div>
             <img class="clouds-gamer" src="./images/clouds-gamer.png"/>
             <img class="super-mario" src="./images/super-mario.gif"/>
             <img class="pipe-game" src="./images/pipe-game.png"/>
