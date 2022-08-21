@@ -1,21 +1,22 @@
-const mario = document.querySelector(".super-mario");
-const pipe = document.querySelector(".pipe-game"); 
+let mario = document.querySelector(".super-mario");
+let pipe = document.querySelector(".pipe-game"); 
+let pontos = document.getElementById('score');
+const game_over = document.querySelector('#game_over');
+const reset_button = document.querySelector('#reset_button');
+const start_button = document.querySelector('#start_button');
 
-let placar = setInterval(updated);
 let pontuacao = 0;
 
-function updated(){
-    var pontos = document.getElementById('score');
-    pontos.innerHTML = "score: " + pontuacao++;
-    clearInterval(placar);
-}
+function updated() {
+  pontos.innerHTML = "score: " + pontuacao++;
+};
 
-function tocaMarioDeath(){
+/*function tocaMarioDeath(){
     document.querySelector("#mario_death").play();
 };
 function tocaMarioCoin(){
     document.querySelector("#mario_coin").play();
-};
+};*/
 
 const jump = () => {
     mario.classList.add("jump-mario"); 
@@ -25,13 +26,15 @@ const jump = () => {
     }, 500); 
 };
 
+
 const loopGame = setInterval(() => { 
     
-    const pipePosition = pipe.offsetLeft;
-    const marioPosition = +window 
+    let pipePosition = pipe.offsetLeft;
+    let marioPosition = +window 
         .getComputedStyle(mario)
-        .bottom.replace("px", "")
+        .bottom.replace("px", "");
 
+    
     if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80){
         pipe.style.animation = "none";
         pipe.style.left =`${pipePosition}px`;
@@ -41,19 +44,23 @@ const loopGame = setInterval(() => {
 
         mario.src = "./images/mario-game-over.png";
         mario.style.width = "75px";
-        mario.style.marginLeft = "45px";
+        mario.style.marginLeft = "45px"; 
 
-        tocaMarioDeath();
-
+        //tocaMarioDeath();
+        game_over.style.display = 'block';
         clearInterval(loopGame);
 
-    }else if(pipePosition <= 0 && marioPosition >= 0){
+        reset_button.addEventListener('click', () => {
+        });
+            
 
-        tocaMarioCoin();
+    }else if(pipePosition <= 0  && marioPosition > 0){
+
+        //tocaMarioCoin();
         updated();
 
-    };
+    }
 
-}, 10);
-
+}, 100);
+ 
 document.addEventListener("keydown", jump);
