@@ -5,7 +5,7 @@ const game_over = document.querySelector('#game_over');
 const reset_button = document.querySelector('#reset_button');
 const start_button = document.querySelector('#start_button');
 
-let pontuacao = 0;
+let pontuacao = 1;
 
 function updated() {
   pontos.innerHTML = "score: " + pontuacao++;
