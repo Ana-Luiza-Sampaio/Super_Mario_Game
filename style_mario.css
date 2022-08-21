@@ -113,6 +113,7 @@
     width: 80px;
     animation: pipe-animation 1.5s infinite linear;
 }
+
 @keyframes clouds-animation{
     from{
         right: -550px;
