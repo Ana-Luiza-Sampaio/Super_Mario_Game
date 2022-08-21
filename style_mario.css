@@ -4,6 +4,77 @@
     padding: 0;
     box-sizing: border-box;
 }
+.start_game{
+    position: absolute;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 20px;
+}
+.start_game h1{
+    font-size: 28px;
+    color: black;
+    text-transform: uppercase;
+}
+.start_game h2{
+    padding-top: 25px;
+}
+.start_game p{
+    padding-top: 25px;
+    font-size: 17px;
+}
+.start_game button{
+    margin-top: 25px;
+    background-color: #87ceeb;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.game_over{
+    display: none;
+    position: absolute;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 20px;
+}
+.game_over h1{
+    font-size: 28px;
+    color: black;
+    text-transform: uppercase;
+}
+.game_over h2{
+    padding-top: 25px;
+}
+.game_over p{
+    padding-top: 25px;
+    font-size: 17px;
+}
+.game_over input{
+    margin-top: 25px;
+    background-color: #87ceeb;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
 .game{
     width: 100%;
     height: 100vh;
