@@ -2,8 +2,7 @@ let mario = document.querySelector(".super-mario");
 let pipe = document.querySelector(".pipe-game"); 
 let pontos = document.getElementById('score');
 const game_over = document.querySelector('#game_over');
-const reset_button = document.querySelector('#reset_button');
-const start_button = document.querySelector('#start_button');
+const start_game = document.querySelector('#start_game');
 
 let pontuacao = 1;
 
@@ -11,12 +10,15 @@ function updated() {
   pontos.innerHTML = "score: " + pontuacao++;
 };
 
-/*function tocaMarioDeath(){
+function tocaMarioDeath(){
     document.querySelector("#mario_death").play();
 };
 function tocaMarioCoin(){
     document.querySelector("#mario_coin").play();
-};*/
+};
+function tocaMarioHello(){
+    document.querySelector("#mario_hello").play();
+};
 
 const jump = () => {
     mario.classList.add("jump-mario"); 
@@ -25,7 +27,6 @@ const jump = () => {
         mario.classList.remove("jump-mario");
     }, 500); 
 };
-
 
 const loopGame = setInterval(() => { 
     
@@ -46,7 +47,7 @@ const loopGame = setInterval(() => {
         mario.style.width = "75px";
         mario.style.marginLeft = "45px"; 
 
-        //tocaMarioDeath();
+        tocaMarioDeath();
         game_over.style.display = 'block';
         clearInterval(loopGame);
 
@@ -54,9 +55,9 @@ const loopGame = setInterval(() => {
         });
             
 
-    }else if(pipePosition <= 0  && marioPosition > 0){
+    }else if(pipePosition < 0  && marioPosition >= 0){
 
-        //tocaMarioCoin();
+        tocaMarioCoin();
         updated();
 
     }
@@ -64,3 +65,12 @@ const loopGame = setInterval(() => {
 }, 100);
  
 document.addEventListener("keydown", jump);
+
+document.querySelector("#reset_button").addEventListener("click", () => {
+    location.reload();
+});
+start_button.addEventListener("click", () => {
+    pipe.classList.toggle("pipe-game-start");
+    tocaMarioHello();
+    start_game.style.display = 'none';
+});
