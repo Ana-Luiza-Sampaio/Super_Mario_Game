@@ -110,10 +110,12 @@
 .pipe-game{
     position: absolute;
     bottom: 0;
+    right: 0;
     width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
 }
-
+.pipe-game-start{
+    animation: pipe-animation 1.5s infinite linear
+}
 @keyframes clouds-animation{
     from{
         right: -550px;
